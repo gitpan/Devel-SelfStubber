@@ -21,9 +21,9 @@ my %WriteMakefileArgs = (
   'NAME' => 'Devel::SelfStubber',
   'PREREQ_PM' => {
     'File::Spec' => '0',
-    'SelfLoader' => '0'
+    'SelfLoader' => '1.0903'
   },
-  'VERSION' => '1.03',
+  'VERSION' => '1.04',
   'test' => {
     'TESTS' => 't/*.t'
   }
