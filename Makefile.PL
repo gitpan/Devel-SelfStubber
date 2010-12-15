@@ -23,7 +23,7 @@ my %WriteMakefileArgs = (
     'File::Spec' => '0',
     'SelfLoader' => '1.0903'
   },
-  'VERSION' => '1.04',
+  'VERSION' => '1.05',
   'test' => {
     'TESTS' => 't/*.t'
   }
@@ -45,6 +45,9 @@ unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
 
 delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
   unless eval { ExtUtils::MakeMaker->VERSION(6.52) };
+
+$WriteMakefileArgs{INSTALLDIRS} = 'perl'
+    if $] >= 5.009005 && $] <= 5.011000;
 
 WriteMakefile(%WriteMakefileArgs);
 
